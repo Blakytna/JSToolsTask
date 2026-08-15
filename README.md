@@ -1,9 +1,10 @@
-[Task] JS Tools: WDIO, Jest/Mocha, Chai
+[Task] Test Automation Framework
 
-For this practical task should be automated written in Module 2 scenarios
+For this practical task, the result of the previous module should be used.
+Take your set up test automation framework and improve it by applying knowledge from this module. Refactor automated tests created in the previous module based on Page object pattern and follow DRY, KISS, YAGNI principles (other design patterns can be used as well)
+The solution should be split into next layers:
 
-1. Build a framework using WDIO and Mocha setup
-2. Make sure Chai library is set up and used in your framework
-3. Practice with Assert, Should, Expect interfaces to use them in tests
-4. Understand the differences between mentioned interfaces
-5. Push the code to remote repository and create Merge Request
+1. Core layer (core functionality of TAF, that isn’t project specific).
+2. Business layer (should contain all functionality, related with business logic of the tested application)
+3. Tests layer (should contain automated tests, TAF configuration)
+4. Push the code to remote repository and create Merge Request
