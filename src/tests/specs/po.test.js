@@ -65,7 +65,7 @@ describe('Authenticated user actions', () => {
 
         const newPhone = createRandomUser().phone;
 
-        await accountPage.profileButton.click();
+        await accountPage.goToProfile();
         await profilePage.updatePhone(newPhone);
 
         expect(await profilePage.successMessage.getText()).to.equal(
@@ -81,14 +81,14 @@ describe('Authenticated user actions', () => {
         const accountPage = new AccountPage();
         const favoritesPage = new FavoritesPage();
 
-        await header.homeButton.click();
-        await homePage.product.click();
+        await header.goToHomePage();
+        await homePage.openProduct();
 
         const productName = await productPage.productName.getText();
 
         await productPage.addToFavorites();
-        await header.menuButton.click();
-        await accountPage.myFavoritesButton.click();
+        await header.openMenu();
+        await accountPage.goToFavorites();
 
         expect(await favoritesPage.productName.getText()).to.equal(productName);
     });
@@ -101,7 +101,7 @@ describe('Public user actions', () => {
 
         await homePage.open();
         await homePage.product.waitForDisplayed();
-        await homePage.product.click();
+        await homePage.openProduct();
         await productPage.addToCart();
     }
     it('should add the product to the cart', async () => {
@@ -120,7 +120,7 @@ describe('Public user actions', () => {
         const cartPage = new CartPage();
 
         await addProductToCart();
-        await header.cartButton.click();
+        await header.goToCart();
 
         const priceValue = Number((await cartPage.price.getText()).replace('$', ''));
 
@@ -143,8 +143,8 @@ describe('Public user actions', () => {
         const categoryPage = new CategoryPage();
 
         await browser.url('/');
-        await header.categoriesButton.click();
-        await header.handTools.click();
+        await header.openCategories();
+        await header.openHandTools();
 
         expect(await categoryPage.pageTitle.getText()).to.equal('Category: Hand Tools');
     });
@@ -152,8 +152,8 @@ describe('Public user actions', () => {
         const header = new HeaderComponent();
 
         await browser.url('/');
-        await header.languageButton.click();
-        await header.germanLanguage.click();
+        await header.openLanguageMenu();
+        await header.selectGermanLanguage();
 
         await browser.waitUntil(async () => {
             return (await header.signInButton.getText()) === 'Einloggen';

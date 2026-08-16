@@ -1,8 +1,9 @@
 const BasePage = require('./base.page');
+const { successMessage } = require('../selectors');
 
 class CartPage extends BasePage {
     get successMessage() {
-        return $('[role="alert"].toast-message');
+        return $(successMessage);
     }
     get quantityField() {
         return $('[data-test="product-quantity"]');

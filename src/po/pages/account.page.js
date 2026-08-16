@@ -7,5 +7,11 @@ class AccountPage extends BasePage {
     get myFavoritesButton() {
         return $('[data-test="nav-my-favorites"]');
     }
+    async goToProfile() {
+        await this.profileButton.click();
+    }
+    async goToFavorites() {
+        await this.myFavoritesButton.click();
+    }
 }
 module.exports = AccountPage;

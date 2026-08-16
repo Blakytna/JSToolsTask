@@ -36,5 +36,26 @@ class HeaderComponent {
         await this.menuButton.click();
         await this.signOutButton.click();
     }
+    async openMenu() {
+        await this.menuButton.click();
+    }
+    async goToHomePage() {
+        await this.homeButton.click();
+    }
+    async goToCart() {
+        await this.cartButton.click();
+    }
+    async openCategories() {
+        await this.categoriesButton.click();
+    }
+    async openHandTools() {
+        await this.handTools.click();
+    }
+    async openLanguageMenu() {
+        await this.languageButton.click();
+    }
+    async selectGermanLanguage() {
+        await this.germanLanguage.click();
+    }
 }
 module.exports = HeaderComponent;

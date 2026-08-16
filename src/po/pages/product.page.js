@@ -1,14 +1,15 @@
 const BasePage = require('./base.page');
+const { productName, successMessage } = require('../selectors');
 
 class ProductPage extends BasePage {
     get productName() {
-        return $('[data-test="product-name"]');
+        return $(productName);
     }
     get addToFavoritesButton() {
         return $('#btn-add-to-favorites');
     }
     get successMessage() {
-        return $('[role="alert"].toast-message');
+        return $(successMessage);
     }
     get addToCartButton() {
         return $('#btn-add-to-cart');
