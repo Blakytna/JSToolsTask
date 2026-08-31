@@ -53,6 +53,9 @@ exports.config = {
     capabilities: [
         {
             browserName: 'chrome',
+            'goog:chromeOptions': {
+                args: ['--headless=new', '--window-size=1920,1080'],
+            },
         },
     ],
 
