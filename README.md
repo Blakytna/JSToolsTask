@@ -1,10 +1,7 @@
-[Task] Test Automation Framework
+[Task] BDD with Cucumber
 
-For this practical task, the result of the previous module should be used.
-Take your set up test automation framework and improve it by applying knowledge from this module. Refactor automated tests created in the previous module based on Page object pattern and follow DRY, KISS, YAGNI principles (other design patterns can be used as well)
-The solution should be split into next layers:
-
-1. Core layer (core functionality of TAF, that isn’t project specific).
-2. Business layer (should contain all functionality, related with business logic of the tested application)
-3. Tests layer (should contain automated tests, TAF configuration)
-4. Push the code to remote repository and create Merge Request
+1. Integrate Cucumber with Test Automation Framework (with any Automation tool)
+2. Refactor already existing UI tests to use Сucumber
+3. Add Cucumber tags to feature files with scenarios
+4. Add a script to package.json to run UI tests using Cucumber tags
+5. Run the script above on the existing CI job with UI tests and demo it to a mentor
