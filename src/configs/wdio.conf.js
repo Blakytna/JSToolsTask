@@ -1,3 +1,5 @@
+const path = require('path');
+
 exports.config = {
     //
     // ====================
@@ -144,7 +146,10 @@ exports.config = {
     // Options to be passed to Cucumber.
     // See the full list at https://webdriver.io/docs/frameworks#cucumber-options
     cucumberOpts: {
-        require: ['./src/tests/step-definitions/**/*.js', './src/tests/support/**/*.js'],
+        require: [
+            path.join(__dirname, '../tests/step-definitions/**/*.js'),
+            path.join(__dirname, '../tests/support/**/*.js'),
+        ],
 
         timeout: 60000,
         failAmbiguousDefinitions: true,
