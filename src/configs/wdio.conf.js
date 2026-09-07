@@ -147,8 +147,8 @@ exports.config = {
     // See the full list at https://webdriver.io/docs/frameworks#cucumber-options
     cucumberOpts: {
         require: [
-            path.join(__dirname, '../tests/step-definitions/**/*.js'),
-            path.join(__dirname, '../tests/support/**/*.js'),
+            path.join(__dirname, '../tests/step-definitions/**/*.js').replace(/\\/g, '/'),
+            path.join(__dirname, '../tests/support/**/*.js').replace(/\\/g, '/'),
         ],
 
         timeout: 60000,
