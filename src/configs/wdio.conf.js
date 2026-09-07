@@ -22,7 +22,7 @@ exports.config = {
     //
     specs: [
         // ToDo: define location for spec files here
-        '../tests/specs/**/*.js',
+        '../tests/features/**/*.feature',
     ],
     // Patterns to exclude.
     exclude: [
@@ -114,7 +114,7 @@ exports.config = {
     //
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
-    framework: 'mocha',
+    framework: 'cucumber',
 
     //
     // The number of times to retry the entire specfile when it fails as a whole
@@ -141,11 +141,13 @@ exports.config = {
         ],
     ],
 
-    // Options to be passed to Mocha.
-    // See the full list at http://mochajs.org/
-    mochaOpts: {
-        ui: 'bdd',
+    // Options to be passed to Cucumber.
+    // See the full list at https://webdriver.io/docs/frameworks#cucumber-options
+    cucumberOpts: {
+        require: ['./src/tests/step-definitions/**/*.js', './src/tests/support/**/*.js'],
+
         timeout: 60000,
+        failAmbiguousDefinitions: true,
     },
 
     //
